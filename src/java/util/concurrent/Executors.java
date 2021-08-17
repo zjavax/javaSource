@@ -613,7 +613,7 @@ public class Executors {
                                   namePrefix + threadNumber.getAndIncrement(),
                                   0);
             if (t.isDaemon())
-                t.setDaemon(false);
+                t.setDaemon(false);   // 非守护线程，主线程死亡，也不会停止
             if (t.getPriority() != Thread.NORM_PRIORITY)
                 t.setPriority(Thread.NORM_PRIORITY);
             return t;
